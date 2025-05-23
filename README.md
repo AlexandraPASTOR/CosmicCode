@@ -4,15 +4,15 @@ Cosmic'Code est une application ludique (mobile ou web) destinée à l'initiatio
 🌍 Explore les planètes du code :
 Chaque planète représente une technologie essentielle du web :
 
-🌎 HTML5
+-🌎 HTML5
 
-🌍 CSS3
+-🌍 CSS3
 
-🪐 JavaScript
+-🪐 JavaScript
 
-🌑 React
+-🌑 React
 
-🌏 MySQL
+-🌏 MySQL
 
 🧠 Apprentissage en 3 étapes :
 Découvrir – L’univers de Biome t’ouvre ses portes.
