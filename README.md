@@ -1,12 +1,27 @@
-# React + Vite
+🚀 Cosmic'Code : Apprends le code avec BIOME !
+Cosmic'Code est une application ludique (mobile ou web) destinée à l'initiation au développement web. Elle plonge les utilisateurs dans un univers spatial captivant, guidés par BIOME, un petit alien malicieux inspiré du linter qui encourage un code propre et bien structuré.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌍 Explore les planètes du code :
+Chaque planète représente une technologie essentielle du web :
 
-Currently, two official plugins are available:
+-🌎 HTML5
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-🌍 CSS3
 
-## Expanding the ESLint configuration
+-🪐 JavaScript
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-🌑 React
+
+-🌏 MySQL
+
+🧠 Apprentissage en 3 étapes :
+
+1- Découvrir – L’univers de Biome t’ouvre ses portes.
+
+2- Apprendre – Des quiz interactifs pour tester et renforcer tes compétences.
+
+3- Progresser – Suis ta progression et deviens un as du code !
+
+🎁 Un secret bien gardé...
+Sur la page des quiz, un petit défi t’attend : si tu parviens à attraper l’alien BIOME, un contenu caché ou une surprise spéciale t’est révélée ! 👾✨
+De quoi motiver les explorateurs les plus curieux...
