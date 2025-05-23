@@ -15,11 +15,12 @@ Chaque planète représente une technologie essentielle du web :
 -🌏 MySQL
 
 🧠 Apprentissage en 3 étapes :
-Découvrir – L’univers de Biome t’ouvre ses portes.
 
-Apprendre – Des quiz interactifs pour tester et renforcer tes compétences.
+1- Découvrir – L’univers de Biome t’ouvre ses portes.
 
-Progresser – Suis ta progression et deviens un as du code !
+2- Apprendre – Des quiz interactifs pour tester et renforcer tes compétences.
+
+3- Progresser – Suis ta progression et deviens un as du code !
 
 🎁 Un secret bien gardé...
 Sur la page des quiz, un petit défi t’attend : si tu parviens à attraper l’alien BIOME, un contenu caché ou une surprise spéciale t’est révélée ! 👾✨
