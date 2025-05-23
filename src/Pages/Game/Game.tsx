@@ -20,50 +20,50 @@ function Game () {
     const [isSuccessJS, setIsSuccessJS] = useState(false);
     const [isSuccessReact, setIsSuccessReact] = useState(false);
     const [isSuccessSQL, setIsSuccessSQL] = useState(false);
+    const [showFinalPopup, setShowFinalPopup] = useState(false); 
+    const [showProgressPopup, setShowProgressPopup] = useState(false);
 
-  const [position, setPosition] = useState({ top: 20, left: 160 });
-  const [moving, setMoving] = useState(true);
+    const [position, setPosition] = useState({ top: 20, left: 160 });
+    const [moving, setMoving] = useState(true);
 
- useEffect(() => {
-    if (!moving) return;
+    useEffect(() => {
+        if (!moving) return;
 
-    const moveInterval = setInterval(() => {
-      const randomTop = Math.floor(Math.random() * window.innerHeight * 0.8);
-      const randomLeft = Math.floor(Math.random() * window.innerWidth * 0.8);
-      setPosition({ top: randomTop, left: randomLeft });
-    }, 500);
+        const moveInterval = setInterval(() => {
+            const randomTop = Math.floor(Math.random() * window.innerHeight * 0.8);
+            const randomLeft = Math.floor(Math.random() * window.innerWidth * 0.8);
+            setPosition({ top: randomTop, left: randomLeft });
+        }, 500);
 
-    return () => clearInterval(moveInterval);
-  }, [moving]);
+        return () => clearInterval(moveInterval);
+    }, [moving]);
 
-  const handleClick = () => {
-    setIsPopupVisible(true);
-  };
+    const handleClick = () => {
+        setIsPopupVisible(true);
+    };
 
-  const handleClose = () => {
-    setIsPopupVisible(false);
-  };
+    const handleClose = () => {
+        setIsPopupVisible(false);
+    };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsPopupVisible(false);
-    }, 5750); 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsPopupVisible(false);
+        }, 5750); 
 
-    return () => clearTimeout(timer); 
-  }, []);
+        return () => clearTimeout(timer); 
+    }, []);
 
     const startAudio = () => {
         if (audioRef.current) {
             const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            setIsPlaying(true); // Si la musique démarre avec succès
-          })
-          .catch((error) => {
-            console.warn("Lecture bloquée ou échouée : ", error);
-          });
-        }}}
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => setIsPlaying(true))
+                    .catch((error) => console.warn("Lecture bloquée ou échouée : ", error));
+            }
+        }
+    };
 
     const toggleMute = () => {
         if (audioRef.current) {
@@ -75,28 +75,35 @@ function Game () {
     useEffect(() => {
         const audio = audioRef.current;
         if (audio) {
-            audio.volume = 0.2; // Set volume 
-            audio.loop = true; // Loop the audio
+            audio.volume = 0.2;
+            audio.loop = true;
             audio.play().catch((error) => {
                 console.error("Erreur de lecture de la musique :", error);
             });
         }
     }, []);
 
-    const handleResultHTML = (result: boolean) => {
-        setIsSuccessHTML(result);};
+    const handleResultHTML = (result: boolean) => setIsSuccessHTML(result);
+    const handleResultCSS = (result: boolean) => setIsSuccessCSS(result);
+    const handleResultJS = (result: boolean) => setIsSuccessJS(result);
+    const handleResultReact = (result: boolean) => setIsSuccessReact(result);
+    const handleResultSQL = (result: boolean) => setIsSuccessSQL(result);
 
-    const handleResultCSS = (result: boolean) => {
-        setIsSuccessCSS(result);};
+    useEffect(() => {
+        if (isSuccessHTML && isSuccessCSS && isSuccessJS && isSuccessReact && isSuccessSQL) {
+            setTimeout(() => setShowFinalPopup(true), 500);
+        }
+    }, [isSuccessHTML, isSuccessCSS, isSuccessJS, isSuccessReact, isSuccessSQL]);
 
-    const handleResultJS = (result: boolean) => {
-        setIsSuccessJS(result);};
+const totalSuccess = 
+  (isSuccessHTML ? 1 : 0) +
+  (isSuccessCSS ? 1 : 0) +
+  (isSuccessJS ? 1 : 0) +
+  (isSuccessReact ? 1 : 0) +
+  (isSuccessSQL ? 1 : 0);
 
-    const handleResultReact = (result: boolean) => {
-        setIsSuccessReact(result);};
-
-    const handleResultSQL = (result: boolean) => {
-        setIsSuccessSQL(result);};
+const totalQuizzes = 5;
+const scorePercent = Math.round((totalSuccess / totalQuizzes) * 100);
 
     return (
 <>
@@ -222,6 +229,42 @@ function Game () {
         </div>
       )}
 </div>
+{!showModal && (
+  <>
+    <button
+      className="fixed bottom-4 right-4 z-50 bg-[#0ACAD4] text-black px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 transition"
+      onClick={() => setShowProgressPopup(true)}
+    >
+      Voir ma progression
+    </button>
+
+    {showProgressPopup && (
+      <div className="fixed bottom-20 right-4 z-50 bg-white text-black p-4 rounded-lg shadow-xl w-80">
+        <div className="flex justify-between items-center mb-2">
+          <h2 className="text-lg font-semibold text-[#0ACAD4]">🌌 Ma progression</h2>
+          <button
+            onClick={() => setShowProgressPopup(false)}
+            className="text-red-500 hover:text-red-700 text-lg font-bold"
+          >
+            ✕
+          </button>
+        </div>
+        <p className="text-sm text-gray-600 mb-2">
+          Score : <span className="font-bold">{scorePercent}%</span> ({totalSuccess}/{totalQuizzes} réussis)
+        </p>
+        <ul className="text-sm space-y-1">
+          <li>🔹 HTML : {isSuccessHTML ? "✅ Réussi" : "❌ À faire"}</li>
+          <li>🔹 CSS : {isSuccessCSS ? "✅ Réussi" : "❌ À faire"}</li>
+          <li>🔹 JavaScript : {isSuccessJS ? "✅ Réussi" : "❌ À faire"}</li>
+          <li>🔹 React : {isSuccessReact ? "✅ Réussi" : "❌ À faire"}</li>
+          <li>🔹 SQL : {isSuccessSQL ? "✅ Réussi" : "❌ À faire"}</li>
+        </ul>
+      </div>
+    )}
+  </>
+)}
+
+
 </>
         
     )
