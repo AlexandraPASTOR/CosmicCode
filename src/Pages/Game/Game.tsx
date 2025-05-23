@@ -33,7 +33,7 @@ function Game () {
             const randomTop = Math.floor(Math.random() * window.innerHeight * 0.8);
             const randomLeft = Math.floor(Math.random() * window.innerWidth * 0.8);
             setPosition({ top: randomTop, left: randomLeft });
-        }, 500);
+        }, 1500);
 
         return () => clearInterval(moveInterval);
     }, [moving]);
@@ -150,7 +150,7 @@ const scorePercent = Math.round((totalSuccess / totalQuizzes) * 100);
       {isPopupVisible && (
   <div className="fixed top-0 left-0 w-full h-full bg-white/60 flex items-center justify-center z-50">
     <div className=" p-6  w-96 text-center">
-      <video autoPlay className="w-150 h-auto mx-auto">
+      <video autoPlay className="w-150 h-auto mx-auto rounded-2xl">
         <source src="/video/alien-wb.webm" type="video/webm" />
       </video>
       <button
