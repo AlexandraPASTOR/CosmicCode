@@ -33,7 +33,7 @@ function Game () {
             const randomTop = Math.floor(Math.random() * window.innerHeight * 0.8);
             const randomLeft = Math.floor(Math.random() * window.innerWidth * 0.8);
             setPosition({ top: randomTop, left: randomLeft });
-        }, 1500);
+        }, 600);
 
         return () => clearInterval(moveInterval);
     }, [moving]);
