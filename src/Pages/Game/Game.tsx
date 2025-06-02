@@ -112,13 +112,13 @@ const scorePercent = Math.round((totalSuccess / totalQuizzes) * 100);
 <img
       src="reponse-juste.png"
       alt="Alien content"
-      className="w-20 lg:w-40 animate-bounce-slow mt-2"
+      className="w-20 animate-bounce-slow mt-2"
     />
     </Link>
-<section className="flex justify-center -mt-15 lg:-mt-30 ">
+<section className="flex justify-center -mt-15 ">
   <button
     onClick={toggleMute}
-    className="absolute top-3 right-3 text-2xl lg:text-5xl text-white hover:scale-110 transition-transform duration-200 cursor-pointer"
+    className="absolute top-3 right-3 text-2xl text-white hover:scale-110 transition-transform duration-200 cursor-pointer"
   >
     {!isMuted ? <GoUnmute /> : <GoMute />}
   </button>
@@ -127,7 +127,7 @@ const scorePercent = Math.round((totalSuccess / totalQuizzes) * 100);
 
   <div className="flex items-center">
     
-    <h1 className="text-2xl lg:text-6xl font-orbitron text-[#0ACAD4] font-semibold text-center mb-5">
+    <h1 className="text-2xl font-orbitron text-[#0ACAD4] font-semibold text-center mb-5">
       <span className="text-white italic">Explore les planètes</span><br />
       <span className="text-green-200 font-light">avec </span>
       <span className="text-[#0ACAD4] font-bold">BIOME</span>
@@ -170,7 +170,7 @@ const scorePercent = Math.round((totalSuccess / totalQuizzes) * 100);
     setSelectedQuiz("HTML");
   }}>
     {!isSuccessHTML ? (
-      <img src="planeteHTML.png" alt="HTML" className="h-25 lg:h-45 absolute top-[20px] lg:top-[90px] left-[50px] lg:left-[280px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkHTML.png" alt="HTML" className="h-35 lg:h-75 absolute top-[20px] lg:top-[90px] left-[50px] lg:left-[280px]  rounded-full cursor-pointer" />) }
+      <img src="planeteHTML.png" alt="HTML" className="h-25 absolute top-[20px]  left-[50px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkHTML.png" alt="HTML" className="h-35 absolute top-[20px]  left-[50px]  rounded-full cursor-pointer" />) }
   </button>
 
   <button onClick={() => {
@@ -178,7 +178,7 @@ const scorePercent = Math.round((totalSuccess / totalQuizzes) * 100);
     setSelectedQuiz("CSS");
   }}>
     {!isSuccessCSS ? (
-      <img src="planeteCSS.png" alt="CSS" className="h-25 lg:h-45 absolute top-[90px] lg:top-[170px] left-[200px] lg:left-[700px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkCSS.png" alt="CSS" className="h-35 lg:h-75 absolute top-[90px] left-[230px] lg:left-[700px]   rounded-full cursor-pointer" />) }
+      <img src="planeteCSS.png" alt="CSS" className="h-25 absolute top-[90px]  left-[200px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkCSS.png" alt="CSS" className="h-35 absolute top-[90px]  left-[230px]  rounded-full cursor-pointer" />) }
   </button>
 
  <button onClick={() => {
@@ -186,23 +186,23 @@ const scorePercent = Math.round((totalSuccess / totalQuizzes) * 100);
   setSelectedQuiz("JS");
  }}>
   {!isSuccessJS ? (
-    <img src="planeteJS.png" alt="JS" className="h-25 lg:h-45 absolute top-[190px] lg:top-[390px] left-[80px] lg:left-[350px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkJS.png" alt="JS" className="h-35 lg:h-75 absolute top-[190px] lg:top-[390px] left-[80px] lg:left-[350px]   rounded-full cursor-pointer" />) }
-</button> 
+    <img src="planeteJS.png" alt="JS" className="h-25 absolute top-[190px]  left-[80px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkJS.png" alt="JS" className="h-35 absolute top-[190px]  left-[80px]   rounded-full cursor-pointer" />) }
+</button>
 
  <button onClick={() => {
   setShowModal(true);
   setSelectedQuiz("React");
  }}>
   {!isSuccessReact ? (
-     <img src="planeteREACT.png" alt="React" className="h-25 lg:h-45 absolute top-[260px] lg:top-[480px] left-[200px] lg:left-[710px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkREACT.png" alt="React" className="h-35 lg:h-75 absolute top-[260px] lg:top-[480px] left-[250px] lg:left-[710px] rounded-full cursor-pointer" />)}
-   </button> 
+     <img src="planeteREACT.png" alt="React" className="h-25 absolute top-[260px]  left-[200px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkREACT.png" alt="React" className="h-35 absolute top-[260px]  left-[250px]  rounded-full cursor-pointer" />)}
+   </button>
 
  <button onClick={() => {
       setShowModal(true);
       setSelectedQuiz("SQL");
     }}>
       {!isSuccessSQL ? (
-         <img src="planeteSQL.png" alt="SQL" className="h-25 lg:h-45 absolute top-[360px] lg:top-[680px] left-[90px] lg:left-[450px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer"/>) : ( <img src="checkSQL.png" alt="SQL" className="h-35 lg:h-75 absolute top-[360px] lg:top-[680px] left-[90px] lg:left-[450px]  rounded-full cursor-pointer" />) }
+         <img src="planeteSQL.png" alt="SQL" className="h-25 absolute top-[360px]  left-[90px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer"/>) : ( <img src="checkSQL.png" alt="SQL" className="h-35 absolute top-[360px]  left-[90px]  rounded-full cursor-pointer" />) }
   </button>
 
 </section>
